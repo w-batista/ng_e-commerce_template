@@ -1,0 +1,28 @@
+{
+  "HEADER": {
+    "SEARCH": "Enter your search...",
+    "STORE_LINKS": {
+      "ABOUT": "About Us",
+      "CONTACT": "Contacts",
+      "LOCATION": "Store Location",
+      "ORDER": "Track Order",
+      "BLOG": "Blog"
+    },
+    "ACCOUNT": {
+      "TITLE": "My Account",
+      "DASHBOARD": "Dashboard",
+      "PROFILE": "Edit profile",
+      "ORDER": "Order History",
+      "ADDRESS": "Addresses",
+      "PASSWORD": "Password",
+      "LOGOUT": "Sair"
+    },
+    "CURRENCY": {
+      "TITLE": "Currency",
+      "USD": "US Dollar",
+      "EUR": "Euro",
+      "BRL": "Real"
+    },
+    "LANGUAGE": "Language"
+  }
+}

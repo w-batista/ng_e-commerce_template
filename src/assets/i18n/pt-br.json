@@ -1,0 +1,28 @@
+{
+  "HEADER": {
+    "SEARCH": "Digite sua busca...",
+    "STORE_LINKS": {
+      "ABOUT": "Sobre nós",
+      "CONTACT": "Contatos",
+      "LOCATION": "Localização",
+      "ORDER": "Encontre um Pedido",
+      "BLOG": "Blog"
+    },
+    "ACCOUNT": {
+      "TITLE": "Minha Conta",
+      "DASHBOARD": "Dashboard",
+      "PROFILE": "Editar Perfil",
+      "ORDER": "Histórico de Pedidos",
+      "ADDRESS": "Meus Endereços",
+      "PASSWORD": "Minha senha",
+      "LOGOUT": "Logout"
+    },
+    "CURRENCY": {
+      "TITLE": "Moeda",
+      "USD": "EUA Dólar",
+      "EUR": "Euro",
+      "BRL": "Real"
+    },
+    "LANGUAGE": "Linguagem"
+  }
+}

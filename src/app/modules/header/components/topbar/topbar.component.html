@@ -1,0 +1,100 @@
+<!-- .topbar -->
+<div class="site-header__topbar topbar">
+    <div class="topbar__container container">
+        <div class="topbar__row">
+            <div class="topbar__item topbar__item--link">
+                <a class="topbar-link" routerLink="/site/about-us">{{'HEADER.STORE_LINKS.ABOUT' | translate}}</a>
+            </div>
+            <div class="topbar__item topbar__item--link">
+                <a class="topbar-link" routerLink="/site/contact-us">{{'HEADER.STORE_LINKS.CONTACT' | translate}}</a>
+            </div>
+            <div class="topbar__item topbar__item--link">
+                <a class="topbar-link" routerLink="">{{'HEADER.STORE_LINKS.LOCATION' | translate}}</a>
+            </div>
+            <div class="topbar__item topbar__item--link">
+                <a class="topbar-link" routerLink="/shop/track-order">{{'HEADER.STORE_LINKS.ORDER' | translate}}</a>
+            </div>
+            <div class="topbar__item topbar__item--link">
+                <a class="topbar-link" routerLink="/blog">{{'HEADER.STORE_LINKS.BLOG' | translate}}</a>
+            </div>
+            <div class="topbar__spring"></div>
+            <div class="topbar__item">
+                <div class="topbar-dropdown" appDropdown="topbar-dropdown--opened" #accountDropdown="appDropdown">
+                    <button class="topbar-dropdown__btn" type="button" (click)="accountDropdown.toggle()">
+                        {{'HEADER.ACCOUNT.TITLE' | translate}}
+                        <app-icon name="arrow-rounded-down-7x5" size="7x5"></app-icon>
+                    </button>
+
+                    <div class="topbar-dropdown__body">
+                        <app-header-menu layout="topbar" (itemClick)="accountDropdown.close()" [items]="[
+                            {label: 'HEADER.ACCOUNT.DASHBOARD' | translate,     url: '/account/dashboard'},
+                            {label: 'HEADER.ACCOUNT.PROFILE' | translate,  url: '/account/profile'},
+                            {label: 'HEADER.ACCOUNT.ORDER' | translate, url: '/account/orders'},
+                            {label: 'HEADER.ACCOUNT.ADDRESS' | translate,     url: '/account/addresses'},
+                            {label: 'HEADER.ACCOUNT.PASSWORD' | translate,      url: '/account/password'},
+                            {label: 'HEADER.ACCOUNT.LOGOUT' | translate,        url: '/account/login'}
+                        ]"></app-header-menu>
+                    </div>
+                </div>
+            </div>
+            <div class="topbar__item">
+                <div class="topbar-dropdown" appDropdown="topbar-dropdown--opened" #currencyDropdown="appDropdown">
+                    <button class="topbar-dropdown__btn" type="button" (click)="currencyDropdown.toggle()">
+                        {{'HEADER.CURRENCY.EUR' | translate}}: <span class="topbar__item-value">{{ currencyService.options.code }}</span>
+                        <app-icon name="arrow-rounded-down-7x5" size="7x5"></app-icon>
+                    </button>
+
+                    <div class="topbar-dropdown__body">
+                        <div class="menu menu--layout--topbar">
+                            <ul class="menu__list">
+                                <li
+                                    class="menu__item"
+                                    *ngFor="let currency of currencies"
+                                    (mouseover)="menuItem.classList.add('menu__item--hover')"
+                                    (mouseleave)="menuItem.classList.remove('menu__item--hover')"
+                                    #menuItem
+                                >
+                                    <button class="menu__item-link" type="button" (click)="setCurrency(currency); currencyDropdown.close();">
+                                        {{ currency.name | translate }}
+                                    </button>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="topbar__item">
+                <div class="topbar-dropdown" appDropdown="topbar-dropdown--opened" #languageDropdown="appDropdown">
+                    <button class="topbar-dropdown__btn" type="button" (click)="languageDropdown.toggle()">
+                        {{'HEADER.LANGUAGE' | translate}}: <span class="topbar__item-value">{{valueset}}</span>
+                        <app-icon name="arrow-rounded-down-7x5" size="7x5"></app-icon>
+                    </button>
+
+                    <div class="topbar-dropdown__body">
+                        <div class="menu menu--layout--topbar menu--with-icons">
+                            <ul class="menu__list">
+                                <li
+                                    class="menu__item"
+                                    *ngFor="let language of languages"
+                                    (mouseover)="menuItem.classList.add('menu__item--hover')"
+                                    (mouseleave)="menuItem.classList.remove('menu__item--hover')"
+                                    #menuItem
+                                >
+                                    <button class="menu__item-link" type="button" (click)="setLanguage(language.name, language.lang, language.image);languageDropdown.close();">
+                                        <span class="menu__item-icon">
+                                            <img [src]="'assets/images/languages/'+language.image+'.png'"
+                                                 [srcset]="'assets/images/languages/'+language.image+'.png 1x,' +
+                                                           'assets/images/languages/'+language.image+'@2x.png 2x'" alt="">
+                                        </span>
+                                        {{ language.name }}
+                                    </button>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- .topbar / end -->
